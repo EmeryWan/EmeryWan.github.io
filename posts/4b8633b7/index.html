@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon.png">
+  <link rel="icon" href="/assets/images/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Emery Wan">
+  <meta name="keywords" content="">
+  
+  <title>雷蛇 灵刃 15 黑苹果 - 一层</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/stackoverflow-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.letitout.cloud","root":"/","version":"1.8.9a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="一层" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>一层</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/assets/images/background.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="雷蛇 灵刃 15 黑苹果">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-27 02:02" pubdate>
+        2020年2月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      52
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">雷蛇 灵刃 15 黑苹果</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年2月27日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="雷蛇灵刃-15-标准版-黑苹果"><a href="#雷蛇灵刃-15-标准版-黑苹果" class="headerlink" title="雷蛇灵刃 15 标准版 黑苹果"></a>雷蛇灵刃 15 标准版 黑苹果</h1><p><strong>警告：该教程仅为个人记录，该笔记本安装涉及解锁BIOS，存在一定风险，如您使用该教程对计算机进行更改，所造成的的任何后果我概不负责。</strong></p>
+<h1 id="写在最前"><a href="#写在最前" class="headerlink" title="写在最前"></a>写在最前</h1><ul>
+<li><p>因为疫情原因春节一直宅在家，学校假期也延长了，找到了同款笔记本的教程，所以入坑安装黑苹果，最近把步骤整理了一下。</p>
+</li>
+<li><p>为什么买了这个笔记本？我的旧笔记本是 i5-7200U 的双核低压，内存也只有板载的 8G 不能拓展，性能捉急还经常爆内存。本来的打算再凑点钱买乞丐版的 XPS15 无显卡版（i5-9750H + 8G）。无意中看到了雷蛇灵刃15标准版的旧款在清仓（i7-8750H + 1060Max-Q + 16G），价钱比XPS丐版便宜不少还多个显卡和8G内存，我对显卡要求不大，Intel 挤牙膏CPU只是频率上低 0.1GHZ。</p>
+</li>
+<li><p>使用感受：这是我第一个雷蛇的产品，外观真的很好看，我没有雷蛇信仰，灯什么的无所谓。下一次买笔记本还是要买大众一点的，冷门笔记本在驱动方面的确有点小问题，windows重装之后插耳机经常无法切换，在Linux（试了下 Ubuntu 和 Manjaro）下，都不能识别到耳机。了解的话希望能帮助一下，感谢。</p>
+</li>
+<li><p>安装过程我主要参考了 <a target="_blank" rel="noopener" href="https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/">这篇</a> 和 <a target="_blank" rel="noopener" href="https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh">这篇</a> 教程，感谢他们的辛苦付出。部分内容为他们所写教程的汉化，详细或精简，我的水平有限，刚接触黑苹果，建议同时参考他们的教程。</p>
+</li>
+</ul>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><strong>文件下载:</strong> <a target="_blank" rel="noopener" href="https://github.com/EmeryWan/Razer-Blade-15-2018-Base-Hackintosh">https://github.com/EmeryWan/Razer-Blade-15-2018-Base-Hackintosh</a></p>
+<ul>
+<li>硬件介绍</li>
+<li>结果介绍</li>
+<li>解锁BIOS</li>
+<li>安装前准备</li>
+<li>系统安装</li>
+<li>DSDT，SSDT制作</li>
+<li>网卡</li>
+<li>一些优化</li>
+</ul>
+<h2 id="1-硬件介绍"><a href="#1-硬件介绍" class="headerlink" title="[1] 硬件介绍"></a>[1] 硬件介绍</h2><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">型号</th>
+<th align="center">最终情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CPU</td>
+<td align="center">i7-8750H</td>
+<td align="center">可用</td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">Nvdia 1060 Max-Q</td>
+<td align="center">除 10.13 High Sierra 安装 WebDriver 外不可用</td>
+</tr>
+<tr>
+<td align="center">硬盘</td>
+<td align="center">更换了 金士顿 A2000</td>
+<td align="center">可用</td>
+</tr>
+<tr>
+<td align="center">网卡</td>
+<td align="center">9560NGW</td>
+<td align="center">WIFI 目前无解，蓝牙可用</td>
+</tr>
+<tr>
+<td align="center">显示器</td>
+<td align="center">1080P</td>
+<td align="center">可用</td>
+</tr>
+<tr>
+<td align="center">摄像头</td>
+<td align="center"></td>
+<td align="center">可用</td>
+</tr>
+<tr>
+<td align="center">扬声器</td>
+<td align="center"></td>
+<td align="center">可用</td>
+</tr>
+<tr>
+<td align="center">耳机</td>
+<td align="center"></td>
+<td align="center">无法检测到麦克风，需要手动切换</td>
+</tr>
+<tr>
+<td align="center">麦克风</td>
+<td align="center"></td>
+<td align="center">不可用，已识别，但在设置中未看见输入电平</td>
+</tr>
+<tr>
+<td align="center">触控板</td>
+<td align="center"></td>
+<td align="center">手势可用（反应稍慢）</td>
+</tr>
+<tr>
+<td align="center">HDMI 接口</td>
+<td align="center"></td>
+<td align="center">直通显卡，除安装 High Sierra 外不可用</td>
+</tr>
+<tr>
+<td align="center">Mini DP 接口</td>
+<td align="center"></td>
+<td align="center">直通显卡，除安装 High Sierra 外不可用</td>
+</tr>
+<tr>
+<td align="center">雷电3</td>
+<td align="center"></td>
+<td align="center">可热插拔，被识别成 USB3.1，可外接拓展坞外接显示器</td>
+</tr>
+</tbody></table>
+<h2 id="2-安装结果"><a href="#2-安装结果" class="headerlink" title="[2] 安装结果"></a>[2] 安装结果</h2><p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/2-1.png" srcset="/img/loading.gif" lazyload alt="2-1"></p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">.<br>├── CLOVERX64.efi<br>├── config.plist<br>├── ACPI<br>│   └── patched<br>│       ├── DSDT.aml<br>│       ├── SSDT-10-OptTabl.aml<br>│       ├── SSDT-PNLF.aml<br>│       ├── SSDT-UIAC-ALL.aml<br>│       ├── SSDT-USBX.aml<br>│       └── SSDT-XOSI.aml<br>├── drivers<br>├── kexts<br>│   └── Other<br>│       ├── ACPIBatteryManager.kext<br>│       ├── AppleALC.kext<br>│       ├── CPUFriend.kext<br>│       ├── Lilu.kext<br>│       ├── LiluFriend.kext<br>│       ├── NoTouchID.kext<br>│       ├── RealtekRTL8111.kext<br>│       ├── SMCBatteryManager.kext<br>│       ├── SMCLightSensor.kext<br>│       ├── SMCProcessor.kext<br>│       ├── SMCSuperIO.kext<br>│       ├── VirtualSMC.kext<br>│       ├── USBInjectAll.kext<br>│       ├── VoodooI2C.kext<br>│       ├── VoodooI2CHID.kext<br>│       └── WhateverGreen.kext<br>├── misc<br>├── themes<br>└── tools<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="待解决问题"><a href="#待解决问题" class="headerlink" title="待解决问题"></a>待解决问题</h3><p>我也是刚刚接触黑苹果，很多问题我也无法解决，哪位好心人会解决的话，希望能教我一下，感谢。</p>
+<ul>
+<li><p>麦克风无法使用，系统能找到但无法使用，耳机麦克风无法找到。想要使用的话只能通过蓝牙耳机了。</p>
+</li>
+<li><p>输出设备默认识别到了扬声器和耳机（即使未插入耳机），无法自动切换，需手动切换。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/2-2.png" srcset="/img/loading.gif" lazyload alt="2-2"></p>
+</li>
+</ul>
+<h2 id="3-解锁BIOS"><a href="#3-解锁BIOS" class="headerlink" title="[3] 解锁BIOS"></a>[3] 解锁BIOS</h2><p><strong>解锁BIOS，存在一定风险，如您使用该教程对计算机进行更改，所造成的的任何后果我概不负责！！！</strong></p>
+<p>雷蛇国内官网没有提供驱动和BIOS的下载，如有需要，需要访问美国官网。<a target="_blank" rel="noopener" href="https://support.razer.com/gaming-laptops/razer-blade-15-2018-base/">点我。</a></p>
+<p>该笔记本 DVMT 预分配默认为 32MB，不足以启动 MacOS，在 BIOS 中该设置项默认隐藏，所以要提取本机 BIOS 并且进行解锁，将 DVMT 预分配默认设置为 64MB（1080P），分辨率更高请分配更大空间。</p>
+<p><strong>建议在 windows 下操作。</strong></p>
+<h3 id="3-1-提取本机-BIOS"><a href="#3-1-提取本机-BIOS" class="headerlink" title="[3-1] 提取本机 BIOS"></a>[3-1] 提取本机 BIOS</h3><p><strong>注意备份好。</strong></p>
+<p>打开 <code>AFUWINGUI.exe</code>，点击 Save 按钮，导出本机当前 BIOS 。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/3-1.png" srcset="/img/loading.gif" lazyload alt="3-1"></p>
+<h3 id="3-2-修改-BIOS"><a href="#3-2-修改-BIOS" class="headerlink" title="[3-2] 修改 BIOS"></a>[3-2] 修改 BIOS</h3><ul>
+<li>打开 <code>AMIBCP.exe</code> ，点击 File -&gt; open 打开导出的 BIOS。</li>
+<li>如图，在左侧选择 / -&gt; Setup -&gt; Chipset，将左侧的 <code>System Agent Configuration</code> 的 Access 由 Default 修改为 USER</li>
+</ul>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/3-2.png" srcset="/img/loading.gif" lazyload alt="3-2"></p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/3-3.png" srcset="/img/loading.gif" lazyload alt="3-3"></p>
+<ul>
+<li>修改完后点击 File -&gt; Save as。重命名为新的 BIOS。</li>
+</ul>
+<h3 id="3-3-刷入新-BIOS"><a href="#3-3-刷入新-BIOS" class="headerlink" title="[3-3] 刷入新 BIOS"></a>[3-3] 刷入新 BIOS</h3><p><strong>！！！ 注意，该过程虽然简单，但有一定风险，造成的任何结果与本人无关。</strong></p>
+<ul>
+<li><p>重新打开 AFUWINGUI.exe，点击 Open 打开刚刚修改后的 BIOS。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/3-4.png" srcset="/img/loading.gif" lazyload alt="3-4"></p>
+</li>
+<li><p>尽可能的退出其他程序，尽量保持后台干净，再点击 Flash 刷入新的 BIOS。</p>
+</li>
+</ul>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/3-5.png" srcset="/img/loading.gif" lazyload alt="3-5"></p>
+<ul>
+<li>重启</li>
+</ul>
+<h1 id="4-安装前准备"><a href="#4-安装前准备" class="headerlink" title="[4] 安装前准备"></a>[4] 安装前准备</h1><h3 id="4-1-准备macOS-Catalina-安装盘"><a href="#4-1-准备macOS-Catalina-安装盘" class="headerlink" title="[4-1] 准备macOS Catalina 安装盘"></a>[4-1] 准备macOS Catalina 安装盘</h3><p>推荐使用<a target="_blank" rel="noopener" href="https://blog.daliansky.net/">黑果小兵</a>制作的镜像，使用 <strong>TransMac</strong> 制作（软件在文件夹中已提供）。<a target="_blank" rel="noopener" href="https://blog.daliansky.net/macOS-Catalina-10.15.3-19D76-Release-version-with-Clover-5103-original-image-Double-EFI-Version.html">这里是10.15.3的镜像</a>。</p>
+<p>如果您要安装更新的系统，请升级 CLOVER，和 kexts/ 到对应兼容或更新的版本，可将制作好的安装盘中 <code>EFI/CLOVER</code> 的文件进行同名替换。（未来的新版本可能不可预知的问题，请酌情升级）。</p>
+<h3 id="4-2-启动盘制作"><a href="#4-2-启动盘制作" class="headerlink" title="[4-2] 启动盘制作"></a>[4-2] 启动盘制作</h3><p>请参考，或自行搜索，网上教程很多。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58630676">点我。</a></p>
+<h2 id="5-系统安装"><a href="#5-系统安装" class="headerlink" title="[5] 系统安装"></a>[5] 系统安装</h2><h3 id="5-1-BIOS-设置"><a href="#5-1-BIOS-设置" class="headerlink" title="[5-1] BIOS 设置"></a>[5-1] BIOS 设置</h3><ul>
+<li><p><code>Advanced</code></p>
+<ul>
+<li><code>Thunderbolt(TM) Configuration</code><ul>
+<li><code>Security Level</code> 设置成 <code>No Security</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>Chipset</code></p>
+<ul>
+<li><code>System Agent (SA) Configuration</code><ul>
+<li><code>Graphics Configuration</code><ul>
+<li><code>DVMT Pre-Allocated</code>  设置成 <code>64</code></li>
+<li><code>DVMT Total Gfx Mem</code>  设置成 <code>MAX</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>Security</code></p>
+<ul>
+<li> <code>Secure Boot</code> 设置成 <code>Disabled</code></li>
+</ul>
+</li>
+<li><p><code>Boot</code></p>
+<ul>
+<li><p><code>Fast Boot</code> 设置成 <code>Disabled</code></p>
+</li>
+<li><p><code>CSM Configuration</code></p>
+<ul>
+<li><code>CSM Support</code> 设置成 <code>Disabled</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-安装过程"><a href="#5-2-安装过程" class="headerlink" title="[5-2] 安装过程"></a>[5-2] 安装过程</h3><p>系统安装过程大致相同，选择U盘启动后进入安装。安装过程会重启几次。</p>
+<p>可自行搜索，参考其他人的步骤。</p>
+<h3 id="5-3-安装时可能出现的问题"><a href="#5-3-安装时可能出现的问题" class="headerlink" title="[5-3] 安装时可能出现的问题"></a>[5-3] 安装时可能出现的问题</h3><p>显示程序副本已损坏</p>
+<ul>
+<li>断网</li>
+<li>打开终端</li>
+<li>修改时间为系统发布对应的时间。</li>
+</ul>
+<p>如修改为 2019年。输入 <code>date 000000002019</code>。</p>
+<h2 id="6-DSDT，SSDT制作"><a href="#6-DSDT，SSDT制作" class="headerlink" title="[6] DSDT，SSDT制作"></a>[6] DSDT，SSDT制作</h2><p>通过修补DSDT，SSDT驱动触控板，音频，电池状态，亮度控制等。</p>
+<h3 id="6-1-准备修补"><a href="#6-1-准备修补" class="headerlink" title="[6-1] 准备修补"></a>[6-1] 准备修补</h3><p>[6-1-1]</p>
+<p>开机在 Clover 引导界面中按 <code>F4</code>，所需文件会加载到  <code>EFI/Clover/ACPI/origin</code> 中。通过 Clover Configurator 挂载启动的 EFI（通过U盘启动就挂载U盘）。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-1.png" srcset="/img/loading.gif" lazyload alt="6-1"></p>
+<p>[6-1-2]</p>
+<p>将 origin 文件夹复制到桌面，同时将 <code>iasl</code> 软件复制到文件夹中。</p>
+<p>[6-1-3]</p>
+<p>打开终端</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd ~/Desktop<br>mkdir patched<br>./origin/iasl -da -dl DSDT.aml<br></code></pre></div></td></tr></table></figure>
+
+<p>[6-1-4]</p>
+<p>打开 origin，使用 <code>MaciASL</code> 打开生成的 <strong>DSDT.dsl</strong> 文件。点击 Compile，确保没有错误。（默认应该没有 error，但有很多 warning，warning 不必关系，若有 error 请将 error 处代码注释或删除）</p>
+<p>[6-1-5]</p>
+<p>确保没有 errors 后，点击 Patch。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-2.png" srcset="/img/loading.gif" lazyload alt="6-2"></p>
+<h3 id="6-2-修复电池"><a href="#6-2-修复电池" class="headerlink" title="[6-2] 修复电池"></a>[6-2] 修复电池</h3><p>[1] 在弹窗的左侧点击  <code>_RehabMan Laptop/[bat]Razer Blade (2014)</code> ，等待右侧进行匹配后点击 Apply。</p>
+<p>如果网络不好的话可能无法加载（github），请切换到合适的网络，或访问 <a target="_blank" rel="noopener" href="https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Razer-Blade-2014.txt">这里</a>，或复制以下代码。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-3.png" srcset="/img/loading.gif" lazyload alt="6-3"></p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">#Maintained by: RehabMan for: Laptop Patches<br>#battery_Razer-Blade-2014.txt<br><br># created by sidelia 2016-01-17<br># changes for Razer Blade Stealth (Kaby Lake) by BlenderSleuth (minor fixes by RehabMan)<br><br># works for:<br>#  Razer Blade (2014)<br>#  Razer Blade Stealth (Kaby Lake), per BlenderSleuth<br>#  Razer Blade (14&quot;, late 2016)<br>#  Razer Blade Pro (2017)<br>#  Razer Blade 15 (2018), per JomanJi/blodtanner<br><br>into method label B1B2 remove_entry;<br>into definitionblock code_regex . insert<br>begin<br>Method (B1B2, 2, NotSerialized) &#123; Return(Or(Arg0, ShiftLeft(Arg1, 8))) &#125;\n<br>end;<br><br>into device label EC0 code_regex BIF1,\s+16, replace_matched begin IF10,8,IF11,8, end;<br>into device label EC0 code_regex BIF2,\s+16, replace_matched begin IF20,8,IF21,8, end;<br>into device label EC0 code_regex BIF3,\s+16, replace_matched begin IF30,8,IF31,8, end;<br>into device label EC0 code_regex BIF4,\s+16, replace_matched begin IF40,8,IF41,8, end;<br><br>into device label EC0 code_regex BST0,\s+16, replace_matched begin ST00,8,ST01,8, end;<br>into device label EC0 code_regex BST1,\s+16, replace_matched begin ST10,8,ST11,8, end;<br>into device label EC0 code_regex BST2,\s+16, replace_matched begin ST20,8,ST21,8, end;<br>into device label EC0 code_regex BST3,\s+16, replace_matched begin ST30,8,ST31,8, end;<br><br>into method label _BIF code_regex \^\^EC0\.BIF1, replaceall_matched begin B1B2(^^EC0.IF10,^^EC0.IF11), end;<br>into method label _BIF code_regex \^\^EC0\.BIF2, replaceall_matched begin B1B2(^^EC0.IF20,^^EC0.IF21), end;<br>into method label _BIF code_regex \^\^EC0\.BIF3, replaceall_matched begin B1B2(^^EC0.IF30,^^EC0.IF31), end;<br>into method label _BIF code_regex \^\^EC0\.BIF4, replaceall_matched begin B1B2(^^EC0.IF40,^^EC0.IF41), end;<br><br>into method label _BST code_regex \^\^EC0\.BST0, replaceall_matched begin B1B2(^^EC0.ST00,^^EC0.ST01), end;<br>into method label _BST code_regex \^\^EC0\.BST1, replaceall_matched begin B1B2(^^EC0.ST10,^^EC0.ST11), end;<br>into method label _BST code_regex \^\^EC0\.BST2, replaceall_matched begin B1B2(^^EC0.ST20,^^EC0.ST21), end;<br>into method label _BST code_regex \^\^EC0\.BST3, replaceall_matched begin B1B2(^^EC0.ST30,^^EC0.ST31), end;<br><br># added for Razer Blade 15 (2018), per JomanJi<br>into device label EC0 code_regex BIF0,\s+16, replace_matched begin IF00,8,IF01,8, end;<br>into method label _BIF code_regex \(\^\^EC0.BIF0, replaceall_matched begin (B1B2(\^\^EC0.IF00,\^\^EC0.IF01), end;<br><br># utility methods to read/write buffers from/to EC<br>into method label RE1B parent_label EC0 remove_entry;<br>into method label RECB parent_label EC0 remove_entry;<br>into device label EC0 insert<br>begin<br>Method (RE1B, 1, NotSerialized)\n<br>&#123;\n<br>    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n<br>    Field(ERAM, ByteAcc, NoLock, Preserve) &#123; BYTE, 8 &#125;\n<br>    Return(BYTE)\n<br>&#125;\n<br>Method (RECB, 2, Serialized)\n<br>// Arg0 - offset in bytes from zero-based EC\n<br>// Arg1 - size of buffer in bits\n<br>&#123;\n<br>    ShiftRight(Add(Arg1,7), 3, Arg1)\n<br>    Name(TEMP, Buffer(Arg1) &#123; &#125;)\n<br>    Add(Arg0, Arg1, Arg1)\n<br>    Store(0, Local0)\n<br>    While (LLess(Arg0, Arg1))\n<br>    &#123;\n<br>        Store(RE1B(Arg0), Index(TEMP, Local0))\n<br>        Increment(Arg0)\n<br>        Increment(Local0)\n<br>    &#125;\n<br>    Return(TEMP)\n<br>&#125;\n<br>end;<br><br># buffer fields<br>into device label EC0 code_regex (ECCM,)\s+(256) replace_matched begin ECCX,%2,//%1%2 end;<br>into method label _BIF code_regex \(\^\^EC0.ECCM, replaceall_matched begin (^^EC0.RECB(0x60,256), end;<br></code></pre></div></td></tr></table></figure>
+
+<p>[2] 点击 Compile，确保没有错误。（默认情况下没有，不同版本BIOS可能情况不同）。</p>
+<h3 id="6-4-修复重启保存背光亮度"><a href="#6-4-修复重启保存背光亮度" class="headerlink" title="[6-4] 修复重启保存背光亮度"></a>[6-4] 修复重启保存背光亮度</h3><p>[6-4-1]</p>
+<p>在左侧菜单栏向下滑动，找到 <code>[gfx0] Disable/Enable on _WAK/_PTS (DSDT)</code>，点击都单击 Apply。</p>
+<p>网络不好可点击 <a target="_blank" rel="noopener" href="https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/graphics/graphics_PTS_WAK-disable.txt">这里</a> 或复制以下代码。</p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">  <br>#Maintained by: RehabMan for: Laptop Patches<br>#graphics_PTS_WAK-disable.txt<br><br>#<br># The purpose of this patch is to add code to to _WAK<br># that disables Radeon/nvidia on wake and add code<br># to _PTS that enables it on _PTS.<br>#<br># The path of _OFF may have to be customized to match your SSDTs<br># The patch attempts to identify the correct _REG by using<br># the ACPI PNP identifier for the EC.<br>#<br># Use this patch if you experience trouble shutting down<br># or restarting your laptop when disabling nvida/radeon.<br>#<br><br>into method label _PTS code_regex ([\s\S]*) replace_matched<br>begin<br>External(\\_SB.PCI0.PEG0.PEGP._ON, MethodObj)\n<br>If (CondRefOf(\\_SB.PCI0.PEG0.PEGP._ON)) &#123; \\_SB.PCI0.PEG0.PEGP._ON() &#125;\n<br>%1<br>end;<br><br>into method label _WAK code_regex (Return\s+\(.*) replace_matched<br>begin<br>External(\\_SB.PCI0.PEG0.PEGP._OFF, MethodObj)\n<br>If (CondRefOf(\\_SB.PCI0.PEG0.PEGP._OFF)) &#123; \\_SB.PCI0.PEG0.PEGP._OFF() &#125;\n<br>%1<br>end;<br></code></pre></div></td></tr></table></figure>
+
+<p>[6-4-2] 按 command + F 搜索 <code>Device (ALSD)</code>，找到如图代码，将其替换为以下代码。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-4.png" srcset="/img/loading.gif" lazyload alt="6-4"></p>
+<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dsl">Device (_SB.ALS0)<br>&#123;<br>    Name (_HID, &quot;ACPI0008&quot;)  &#x2F;&#x2F; _HID: Hardware ID<br>    Name (_CID, &quot;smc-als&quot;)  &#x2F;&#x2F; _STA: Status<br>    Name (_ALI, 300)  &#x2F;&#x2F; _ALI: Ambient Light Illuminance<br>    Name (_ALR, Package ()  &#x2F;&#x2F; _ALR: Ambient Light Response<br>    &#123;<br>    Package () &#123; 100, 300 &#125;,<br>    &#125;)<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-5.png" srcset="/img/loading.gif" lazyload alt="6-5"></p>
+<h3 id="6-3-修复触控板"><a href="#6-3-修复触控板" class="headerlink" title="[6-3] 修复触控板"></a>[6-3] 修复触控板</h3><p>灵刃 15 的标准版和精英版使用的触控板不同，请根据自己的电脑进行选择修复方案。</p>
+<h4 id="6-3-1-标准版"><a href="#6-3-1-标准版" class="headerlink" title="[6-3-1] 标准版"></a>[6-3-1] 标准版</h4><p>[6-3-1-1]</p>
+<p>继续搜索 <code>SSCN</code>。找到 Scope 为 <code>_SB.PCI0.I2C0</code> 下的 SSCN 方法。复制 SSCN 与 FMCN（在 SSCN 下方）这 两个方法。并将这两个方法如图重命名（也可选择删除）。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-6.png" srcset="/img/loading.gif" lazyload alt="6-6"></p>
+<p>重命名为：</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-7.png" srcset="/img/loading.gif" lazyload alt="6-7"></p>
+<p>[6-3-1-3]</p>
+<p>搜索 TPD0。将之前剪切的两个方法放到 <code>_INI</code> 方法后。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-8.png" srcset="/img/loading.gif" lazyload alt="6-8"></p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-9.png" srcset="/img/loading.gif" lazyload alt="6-9"></p>
+<p>[6-3-1-4]</p>
+<p>向下找到如下代码。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-10.png" srcset="/img/loading.gif" lazyload alt="6-10"></p>
+<p>将其更改为如图。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-11.png" srcset="/img/loading.gif" lazyload alt="6-11"></p>
+<h4 id="6-3-2-精英版"><a href="#6-3-2-精英版" class="headerlink" title="[6-3-2] 精英版"></a>[6-3-2] 精英版</h4><p>[6-3-2-1]  </p>
+<p>在 Patch 页面中粘贴以下代码代码，点击 Apply。</p>
+<p>[6-3-2-2]</p>
+<p>点击 Compile 进行编译确定无 error（默认没有）。</p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">into method label _STA parent_label GPI0 replace_content begin<br>Return (0x0F)<br>end;<br><br>into_all method label _CRS parent_label TPD0 replace_content begin<br>ConcatenateResTemplate (SBFB, SBFI)<br>end;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="6-4-保存修改好的-DSDT-aml"><a href="#6-4-保存修改好的-DSDT-aml" class="headerlink" title="[6-4] 保存修改好的 DSDT.aml"></a>[6-4] 保存修改好的 DSDT.aml</h3><ul>
+<li><p>点击 File -&gt; save as 。</p>
+</li>
+<li><p>File Format 选择 <code>ACPI Machine Language Binary</code>。命名为 DSDT.aml。存入桌面中的 parched 文件夹中。</p>
+</li>
+</ul>
+<h3 id="6-5-屏蔽-Nvdia-显卡"><a href="#6-5-屏蔽-Nvdia-显卡" class="headerlink" title="[6-5] 屏蔽 Nvdia 显卡"></a>[6-5] 屏蔽 Nvdia 显卡</h3><ul>
+<li><strong>如果你选择安装 High Sierra 安装 WebDriver 使用 Nvidia 显卡的话，不用该补丁</strong>。</li>
+</ul>
+<p><a href="%5Bhttps%5D(https://www.tonymacx86.com/nvidia-drivers/">点击这里查看支持驱动的 High Sierra </a> : <a target="_blank" rel="noopener" href="https://www.tonymacx86.com/nvidia-drivers/">//www.tonymacx86.com/nvidia-drivers/</a>)</p>
+<ul>
+<li><strong>在的笔记本上使用该补丁会导致 type-c 转视频接口无信号，无法拓展显示器，若出现相同情况请删除该补丁。</strong></li>
+</ul>
+<p>[6-5-1]</p>
+<p>再次进入 origin 文件夹中，在终端输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./origin/iasl -da -dl SSDT-12-OptTabl.aml<br></code></pre></div></td></tr></table></figure>
+
+<p>[6-5-2]</p>
+<p>根据上方修补电池状态，触控板的方式类似，使用 MaciASL 打开 <strong>SSDT-12-OptTabl.dsl</strong></p>
+<p>[6-5-3]</p>
+<p> 按 command + F 搜索以下代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">Method (_OFF, 0, Serialized)  // _OFF: Power Off<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-12.png" srcset="/img/loading.gif" lazyload alt="6-12"></p>
+<p>[6-5-4]</p>
+<p> 在该代码上方，粘贴以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dsl">Method (_INI) &#123;_OFF() &#125; &#x2F;&#x2F; added to call _OFF<br></code></pre></div></td></tr></table></figure>
+
+<p>[6-5-5]</p>
+<p>点击 patch，将以下代码粘贴到弹窗中，点击 apply。</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">into method label _INI parent_label \_SB.PCI0.GFX0 insert<br>begin<br>//added to turn nvidia/radeon off\n<br>External(\_SB.PCI0.PEG0.PEGP._OFF, MethodObj)\n<br>\n<br>end;<br></code></pre></div></td></tr></table></figure>
+
+<p>[6-5-6]</p>
+<p>点击编译，出现一个错误。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-13.png" srcset="/img/loading.gif" lazyload alt="6-13"></p>
+<p>[6-5-7]</p>
+<p>搜索一下代码，并将其删除，再次编译。</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">External (_SB_.PCI0.PEG0.TGPC, IntObj)    // (from opcode)<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-14.png" srcset="/img/loading.gif" lazyload alt="6-10"></p>
+<p>[6-5-8]</p>
+<p>点击 File -&gt; Save As。将最终的 /aml 文件保存。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-15.png" srcset="/img/loading.gif" lazyload alt="6-11"></p>
+<h3 id="6-6-制作-SSDT-USBX-aml"><a href="#6-6-制作-SSDT-USBX-aml" class="headerlink" title="[6-6] 制作 SSDT-USBX.aml"></a>[6-6] 制作 SSDT-USBX.aml</h3><p>如果想制作自己的 SSDT-USBX.aml。请参考 <a target="_blank" rel="noopener" href="https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh#usb-mapping">点我。</a></p>
+<p>使用 USBMap。<a target="_blank" rel="noopener" href="https://github.com/corpnewt/USBMap">点我</a></p>
+<h3 id="6-7-复制提供的的-aml-文件"><a href="#6-7-复制提供的的-aml-文件" class="headerlink" title="[6-7] 复制提供的的 .aml 文件"></a>[6-7] 复制提供的的 .aml 文件</h3><p>将文件夹中的 SSDT-PNLF.aml，SSDT-UIAC-ALL.aml，SSDT-USBX.aml，SSDT-XOSI.aml 同上面修补的两个文件一同放入 patched 文件夹中，最后 patched 文件夹中应该有如下6个文件。</p>
+<p><strong>如果 type-c 转视频接口无信号，请删除SSDT-12-OptTabl.aml</strong></p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/6-16.png" srcset="/img/loading.gif" lazyload alt="6-16"></p>
+<h2 id="7-网卡"><a href="#7-网卡" class="headerlink" title="[7] 网卡"></a>[7] 网卡</h2><h3 id="7-1-更换博通网卡"><a href="#7-1-更换博通网卡" class="headerlink" title="[7-1] 更换博通网卡"></a>[7-1] 更换博通网卡</h3><p>在网上找过拆机图，网卡附近的位置还是挺多的，我的选择是拆机的 <code>BCM94360cs2</code> + 转接卡，可直接免驱使用。</p>
+<p>相比使用原装的网卡位置稍有点高，压在一根的排线上，但是不影响，如选择同款网卡，请注意绝缘，建议上螺丝的时候不要拧太紧，不松动即可。装上之后的效果如图。</p>
+<p><strong>小提示：</strong>拧螺丝前最好把易碎贴给清理干净。这个贴纸分量太足，卡在螺丝孔中导致一直滑丝。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/7-1.png" srcset="/img/loading.gif" lazyload alt="7-1"></p>
+<p><strong>使用效果：</strong>2.4G WIFI 和 蓝牙有干扰，尤其是 2.4G WIFI 使用带宽高的时候，蓝牙几乎不能用。其他使用场景基本良好。</p>
+<ul>
+<li><p>想折腾的话可选择 <code>DW1820A</code>，可参考 <a target="_blank" rel="noopener" href="https://blog.daliansky.net/DW1820A_BCM94350ZAE-driver-inserts-the-correct-posture.html">这里。</a></p>
+</li>
+<li><p>博通 <code>BCM94352Z</code> ，现在价钱被炒的很高，目前将近 300，有钱随意。</p>
+</li>
+</ul>
+<h3 id="7-2-使用自带网卡"><a href="#7-2-使用自带网卡" class="headerlink" title="[7-2] 使用自带网卡"></a>[7-2] 使用自带网卡</h3><p>Intel 蓝牙默认免驱，WiFi 目前无解。</p>
+<p>蓝牙从 windows 重启进入 macOS 可使用（网卡未断电所以上传了驱动）。</p>
+<p>将 <a target="_blank" rel="noopener" href="https://github.com/zxystd/IntelBluetoothFirmware/releases">该驱动</a> 放入 EFI/CLOVER/kexts，可以实现冷启动驱动自带网卡蓝牙。</p>
+<p><strong>使用效果：</strong>蓝牙键盘，蓝牙音箱没有问题，蓝牙鼠标貌似不能用。</p>
+<h3 id="7-3-使用USB网卡"><a href="#7-3-使用USB网卡" class="headerlink" title="[7-3] 使用USB网卡"></a>[7-3] 使用USB网卡</h3><p>usb 网卡驱动安装。<a target="_blank" rel="noopener" href="https://github.com/chris1111/Wireless-USB-Adapter-Clover/releases">点我。</a></p>
+<ul>
+<li>COMFAST  CF-WU815N  150M 单频</li>
+<li>COMFAST  CF-811AC  650M 双频</li>
+<li>COMFAST  CF-812AC  1300M 双频</li>
+<li>更多其他型号自行搜索</li>
+</ul>
+<h2 id="8-一些优化"><a href="#8-一些优化" class="headerlink" title="[8] 一些优化"></a>[8] 一些优化</h2><h3 id="8-1-HIDPI"><a href="#8-1-HIDPI" class="headerlink" title="[8-1] HIDPI"></a>[8-1] HIDPI</h3><p>开启 HIDPI 后可能会导致开机第二阶段 Logo 变大，因为分辨率是仿冒的，不影响使用。</p>
+<p>使用终端执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">sh -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li><p>选择 “开启 HIDPI”</p>
+</li>
+<li><p>显示的 ICON 选择 Macbook Pro（在设置界面显示的样式）</p>
+</li>
+<li><p>选择分辨率配置 1080P 显示器（根据自身情况选择）</p>
+</li>
+</ul>
+<p>更多详细情况可参考这篇文章。<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2018/09/hidpi.html">点我。</a></p>
+<h3 id="8-2-打开-TRIM"><a href="#8-2-打开-TRIM" class="headerlink" title="[8-2] 打开 TRIM"></a>[8-2] 打开 TRIM</h3><p>如果使用 SSD，一定要打开 TRIM，防止系统多次擦写，确保硬盘寿命。</p>
+<figure class="highlight zsh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs zsh">sudo trimforce <span class="hljs-built_in">enable</span><br></code></pre></div></td></tr></table></figure>
+
+<p>完成后系统会进行一次重启。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/8-1.png" srcset="/img/loading.gif" lazyload alt="8-1"></p>
+<h3 id="8-3-禁用睡眠"><a href="#8-3-禁用睡眠" class="headerlink" title="[8-3] 禁用睡眠"></a>[8-3] 禁用睡眠</h3><p>在终端运行以下命令，并在 设置 -&gt; 节能 中关闭相应设置。 </p>
+<figure class="highlight zsh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs zsh">sudo pmset -a hibernatemode 0<br><br>sudo rm /var/vm/sleepimage<br><br>sudo mkdir /var/vm/sleepimage<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/8-2.png" srcset="/img/loading.gif" lazyload alt="8-2"></p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/02/razer-blade-base-hackintosh/8-3.png" srcset="/img/loading.gif" lazyload alt="8-3"></p>
+<h3 id="8-4-“洗白”序列号"><a href="#8-4-“洗白”序列号" class="headerlink" title="[8-4] “洗白”序列号"></a>[8-4] “洗白”序列号</h3><p>网络上已经有很多教程，自行搜一下。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh">https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/">https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.daliansky.net/">https://blog.daliansky.net/</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Hackintosh/">Hackintosh</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hackintosh/">Hackintosh</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">系统安装</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/d0c4b192/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Spring Cloud Eureka 服务注册与发现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.lazyComments('valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "7KGKpeEgBF3wMkny2GlApl5L-gzGzoHsz",
+          app_key: "XocemQTO4k9zEzAk4J64ffLA",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <div> <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="45" viewBox="0 0 111 38"><g fill="#00a0ff" transform="translate(-1)"><path d="M30.8,4.1 L30.8,4.1 L30.8,4.1 L30.8,4.1 L30.8,4.1 C30.1,3.6 29.4,3.1 28.6,2.7 C28.1,2.4 27.4,2.5 27,3 L22.3,9.2 L22,9.6 C21.5,10.3 20.7,10.6 19.9,10.6 L19,10.6 C16.7,10.7 14.4,11.9 12.9,13.9 C11.7,15.5 11.1,17.4 11.2,19.3 C11.2,19.6 11.4,19.9 11.7,20.1 C12.3,20.4 12.8,21 13,21.7 C13.2,22.8 12.5,23.8 11.5,24.1 C10.3,24.5 9,23.7 8.7,22.5 C8.5,21.8 8.7,21.2 9.1,20.7 C9.3,20.4 9.4,20.1 9.4,19.7 C9.2,17.3 9.8,14.8 11.4,12.7 C13.4,10.1 16.4,8.7 19.5,8.7 C20.1,8.7 20.6,8.4 21,7.9 L25.3,2.2 C25.6,1.8 25.4,1.1 24.9,1 C17.7,-1 9.7,1.4 4.8,7.7 C-1.4,15.8 0.1,27.5 8.2,33.8 C9,34.4 9.7,34.9 10.6,35.4 C11.1,35.7 11.8,35.6 12.2,35.1 L16.9,28.9 L17.2,28.5 C17.7,27.8 18.5,27.5 19.3,27.5 L20.2,27.5 C22.5,27.4 24.8,26.2 26.3,24.2 C27.5,22.6 28.1,20.7 28,18.8 C28,18.5 27.8,18.2 27.5,18 C26.9,17.7 26.4,17.1 26.2,16.4 C26,15.3 26.7,14.3 27.7,14 C28.9,13.6 30.2,14.4 30.5,15.6 C30.7,16.3 30.5,16.9 30.1,17.4 C29.9,17.7 29.8,18 29.8,18.4 C30,20.8 29.4,23.3 27.8,25.4 C25.8,28 22.8,29.4 19.7,29.4 C19.1,29.4 18.6,29.7 18.2,30.2 L14,35.6 C13.7,36 13.9,36.7 14.4,36.8 C21.6,38.9 29.7,36.5 34.5,30.1 C40.7,22 39,10.3 30.8,4.1 Z"></path><g transform="translate(43 8)"><path d="M18.6,2 L18.6,1.6 C18.6,1.2 18.3,1 18,1 L3.5,1 C3.2,1 2.9,1.3 2.9,1.6 L2.9,2.5 C2.9,2.8 3.2,3.1 3.5,3.1 L15.8,3.1 C16.2,3.1 16.4,3.4 16.4,3.8 C16.1,6.1 15,10.4 11.6,14.5 C11.4,14.8 10.9,14.8 10.7,14.5 C7.9,10.9 7,7.2 6.8,5.8 C6.7,5.5 6.5,5.3 6.2,5.3 L5.7,5.3 L5.3,5.3 C5,5.3 4.7,5.6 4.8,6 C5.1,7.6 6.1,11.9 9.5,16 C9.7,16.2 9.7,16.6 9.5,16.8 C5.5,20.5 1.8,21.3 0.5,21.5 C0.2,21.5 7.10542736e-15,21.8 7.10542736e-15,22.1 L7.10542736e-15,23 C7.10542736e-15,23.3 0.3,23.6 0.6,23.6 C2.1,23.4 6.3,22.5 10.8,18.3 C11,18.1 11.4,18.1 11.6,18.3 C13.8,20.3 16.6,22.3 20.4,23.5 C20.7,23.6 21,23.4 21.1,23.1 L21.4,22.3 C21.5,22 21.3,21.7 21,21.6 C17.5,20.5 15,18.7 13,16.9 C12.8,16.7 12.8,16.3 13,16.1 C18.5,9.4 18.6,2.3 18.6,2 Z"></path><path d="M28.6,0.1 L27.7,0.1 C27.4,0.1 27.1,0.4 27.1,0.7 L27.1,3.8 C27.1,4.1 26.8,4.4 26.5,4.4 L24.4,4.4 C24.1,4.4 23.8,4.7 23.8,5 L23.8,5.9 C23.8,6.2 24.1,6.5 24.4,6.5 L26.5,6.5 C26.8,6.5 27.1,6.8 27.1,7.1 L27.1,11.6 C27.1,11.9 26.8,12.2 26.5,12.2 L24.4,12.2 C24.1,12.2 23.8,12.5 23.8,12.8 L23.8,13.7 C23.8,14 24.1,14.3 24.4,14.3 L26.5,14.3 C26.8,14.3 27.1,14.6 27.1,14.9 L27.1,19.2 C27.1,20.1 26.7,21.6 24.4,21.8 C24.1,21.8 23.9,22.1 23.9,22.4 L23.9,23 C23.9,23.3 24.2,23.6 24.5,23.6 C26.8,23.4 29.2,22.1 29.2,18.9 L29.2,14.6 C29.2,14.3 29.5,14 29.8,14 L31.7,14 C32,14 32.3,13.7 32.3,13.4 L32.3,12.5 C32.3,12.2 32,11.9 31.7,11.9 L29.8,11.9 C29.5,11.9 29.2,11.6 29.2,11.3 L29.2,6.8 C29.2,6.5 29.5,6.2 29.8,6.2 L31.7,6.2 C32,6.2 32.3,5.9 32.3,5.6 L32.3,4.7 C32.3,4.4 32,4.1 31.7,4.1 L29.8,4.1 C29.5,4.1 29.2,3.8 29.2,3.5 L29.2,0.6 C29.2,0.3 29,0.1 28.6,0.1 Z"></path><path d="M33.2,22.8 C33.2,23.1 33.5,23.4 33.8,23.4 L40.3,23.4 C43.2,23.4 45.5,21.2 45.5,18.4 L45.5,4.7 C45.5,4.4 45.2,4.1 44.9,4.1 L33.8,4.1 C33.5,4.1 33.2,4.4 33.2,4.7 L33.2,22.8 Z M40.4,21.4 L35.9,21.4 C35.6,21.4 35.3,21.1 35.3,20.8 L35.3,14.6 C35.3,14.3 35.6,14 35.9,14 L43,14 C43.3,14 43.6,14.3 43.6,14.6 L43.6,18.4 C43.6,20.1 42.1,21.4 40.4,21.4 Z M43.6,6.7 L43.6,11.4 C43.6,11.7 43.3,12 43,12 L35.9,12 C35.6,12 35.3,11.7 35.3,11.4 L35.3,6.7 C35.3,6.4 35.6,6.1 35.9,6.1 L43,6.1 C43.3,6.2 43.6,6.4 43.6,6.7 Z"></path><path d="M42.1,0 L36.3,0 C36,0 35.7,0.3 35.7,0.6 L35.7,1.5 C35.7,1.8 36,2.1 36.3,2.1 L42.1,2.1 C42.4,2.1 42.7,1.8 42.7,1.5 L42.7,0.6 C42.7,0.3 42.5,0 42.1,0 Z"></path><path d="M64.2,0.9 L52.2,0.9 C51.9,0.9 51.6,1.2 51.6,1.5 L51.6,2.4 C51.6,2.7 51.9,3 52.2,3 L64.2,3 C64.5,3 64.8,2.7 64.8,2.4 L64.8,1.5 C64.8,1.2 64.5,0.9 64.2,0.9 Z"></path><path d="M59.1,11.2 L67.5,11.2 C67.8,11.2 68.1,10.9 68.1,10.6 L68.1,9.7 C68.1,9.4 67.8,9.1 67.5,9.1 L48.9,9.1 C48.6,9.1 48.3,9.4 48.3,9.7 L48.3,10.6 C48.3,10.9 48.6,11.2 48.9,11.2 L54.6,11.2 C55.1,11.2 55.3,11.7 55.1,12.1 L51.3,19 C51.2,19.2 51.1,19.3 51.1,19.5 C50.8,20.4 50.9,21.4 51.5,22.2 C52.1,23 53.1,23.6 54.2,23.6 L64.6,23.6 C65.1,23.6 65.5,23.4 65.7,23 C65.9,22.6 66,22.1 65.8,21.7 L63.4,17 C63.3,16.7 62.9,16.6 62.6,16.8 L61.8,17.2 C61.5,17.3 61.4,17.7 61.6,18 L63,20.8 C63.2,21.2 62.9,21.6 62.5,21.6 L54.2,21.6 C53.8,21.6 53.4,21.4 53.2,21.1 C53.1,21 52.9,20.7 53,20.3 C53,20.2 53,20.2 53.1,20.1 L57.7,12 C58,11.5 58.5,11.2 59.1,11.2 Z"></path></g></g></svg></a> </div> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i> & </i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        赣ICP备19004365号
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -18,7 +18,7 @@
   <meta name="author" content="Emery Wan">
   <meta name="keywords" content="">
   
-  <title>Hello World - 一层</title>
+  <title>机器学习基础 - 一层</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -164,7 +164,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="机器学习基础">
               
             </span>
 
@@ -174,8 +174,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-06 19:20" pubdate>
-        2021年4月6日 晚上
+      <time datetime="2020-09-16 01:01" pubdate>
+        2020年9月16日 凌晨
       </time>
     </span>
   
@@ -186,7 +186,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      18 字
+      1.3k 字
     </span>
   
 
@@ -196,7 +196,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      13
        分钟
     </span>
   
@@ -226,23 +226,181 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">机器学习基础</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年4月6日 晚上
+                  本文最后更新于：2020年9月16日 凌晨
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>最近博客重整中。</p>
-<p>文章会慢慢整理放上来。</p>
+              <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/machinelearning.png" srcset="/img/loading.gif" lazyload alt="machinelearning"></p>
+<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_table.png" srcset="/img/loading.gif" lazyload alt="lris_table"></p>
+<p>如图所示表格，是鸢尾花（lris）相关信息的数据，其中：</p>
+<ul>
+<li>数据整体称为数据集（data set）</li>
+<li>每一行数据称为一个样本（sample）</li>
+<li>每一列（除表格最后一列）表达样本的一个特征（feature）</li>
+<li>最后一列，成为标记（label）</li>
+</ul>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_feature.png" srcset="/img/loading.gif" lazyload alt="lris_feature"></p>
+<p>如图所示信息，其中 萼片长度、宽度，花瓣的长度、宽度称为 特征；每一行特征的值称为特征向量（数学上通常会将其表示为列向量）。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_feature2.png" srcset="/img/loading.gif" lazyload alt="lris_feature2"></p>
+<p>若将该图中的数据表示为矩阵的方式，结果如图：</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_array.png" srcset="/img/loading.gif" lazyload alt="lris_array"></p>
+<p>选择两种鸢尾花的特征为例，将其表示为如图的二维空间（多维特征将其表示为多维空间）。</p>
+<p>我们将这样的空间称为 特征空间（feature space）。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_feature_space.png" srcset="/img/loading.gif" lazyload alt="lris_feature_space"></p>
+<p>分类任务本质就是在特征空间切分，如图所示，在特征空间中，将鸢尾花根据两种特征分为了两类。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/lris_feature_space2.png" srcset="/img/loading.gif" lazyload alt="lris_feature_space2"></p>
+<h1 id="机器学习的基本任务"><a href="#机器学习的基本任务" class="headerlink" title="机器学习的基本任务"></a>机器学习的基本任务</h1><p>机器学习的基本任务基本有两类，分别为：</p>
+<blockquote>
+<ul>
+<li>分类</li>
+<li>回归</li>
+</ul>
+</blockquote>
+<h2 id="分类任务"><a href="#分类任务" class="headerlink" title="分类任务"></a>分类任务</h2><blockquote>
+<ul>
+<li> 一些算法只支持完成二分类的任务</li>
+<li> 多分类的任务可以转换成二分类的任务</li>
+<li> 一些算法天然的支持多分类问题</li>
+</ul>
+</blockquote>
+<h3 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h3><p>二分类问题的常见实例：</p>
+<ul>
+<li>判断邮件是垃圾邮件；不是垃圾邮件</li>
+<li>判断发放给客户信用卡有风险；无风险</li>
+<li>判断病患良性肿瘤；恶性肿瘤</li>
+<li>判断某支股票涨；跌</li>
+</ul>
+<h3 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h3><p>多分类问题的常见实例：</p>
+<ul>
+<li>数字识别</li>
+<li>图像识别</li>
+<li>判断发放给客户信用卡的风险评级</li>
+<li>围棋游戏等</li>
+<li>自动驾驶识别</li>
+</ul>
+<h3 id="多标签分类"><a href="#多标签分类" class="headerlink" title="多标签分类"></a>多标签分类</h3><p>如图所示，为多标签分类问题的常见实例：</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/label_classification.png" srcset="/img/loading.gif" lazyload alt="label_classification"></p>
+<h2 id="回归任务"><a href="#回归任务" class="headerlink" title="回归任务"></a>回归任务</h2><p>回归问题的结果与分类问题的结果不同，回归问题的结果是一个连续数字的值，而非一个类别。</p>
+<p>常见的回归问题有：</p>
+<ul>
+<li>房屋价格</li>
+<li>市场分析</li>
+<li>学术成绩</li>
+<li>股票价格</li>
+</ul>
+<p>在一些情况下，回归任务可以简化成分类任务。</p>
+<h1 id="机器学习算法分类"><a href="#机器学习算法分类" class="headerlink" title="机器学习算法分类"></a>机器学习算法分类</h1><h2 id="监督学习-supervised-learning"><a href="#监督学习-supervised-learning" class="headerlink" title="监督学习 supervised learning"></a>监督学习 supervised learning</h2><p>监督学习主要处理的是分类问题和回归问题。</p>
+<p>监督学习的含义是给机器的训练数据中拥有“标记”或者“答案”。根据这些数据进行模型的训练。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/supervised_learning.png" srcset="/img/loading.gif" lazyload alt="supervised_learning"></p>
+<ul>
+<li>如根据图片判断猫狗（图像已经拥有了标定信息）</li>
+</ul>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/supervised_learning_2.png" srcset="/img/loading.gif" lazyload alt="supervised_learning_2"></p>
+<ul>
+<li>如更具手写字体识别数字（给出结果标记）</li>
+</ul>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/supervised_learning_3.png" srcset="/img/loading.gif" lazyload alt="supervised_learning_3"></p>
+<ul>
+<li><p>银行已经积累了一定的客户信息和他们信用卡的信用情况</p>
+</li>
+<li><p>医院已经积累了一定的病人信息和他们最终确诊是否患病的情况。</p>
+</li>
+</ul>
+<p>常见的监督学习算法有：</p>
+<blockquote>
+<ul>
+<li>k近邻</li>
+<li> 线性回归和多项式回归</li>
+<li> 逻辑回归</li>
+<li> SVM</li>
+<li> 决策树和随机森林</li>
+</ul>
+</blockquote>
+<h2 id="非监督学习-unsupervised-learning"><a href="#非监督学习-unsupervised-learning" class="headerlink" title="非监督学习 unsupervised learning"></a>非监督学习 unsupervised learning</h2><p>非监督学习给机器的训练数据没有任何“标记”或者“答案”。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/unsupervised_learning.png" srcset="/img/loading.gif" lazyload alt="unsupervised_learning"></p>
+<p>对没有“标记”的数据进行分类 – 聚类分析。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/unsupervised_learning_2.png" srcset="/img/loading.gif" lazyload alt="unsupervised_learning_2"></p>
+<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><h4 id="对数据进行降维处理"><a href="#对数据进行降维处理" class="headerlink" title="对数据进行降维处理"></a>对数据进行降维处理</h4><ul>
+<li>特征提取：行用卡的信用评级和人的胖瘦无关？</li>
+<li>特征压缩：PCA</li>
+</ul>
+<p>降维处理的意义：方便可视化 </p>
+<p>我们无法理解四维以上空间，所以可以将其降维到三维或者二维空间，方便理解。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/unsupervised_learning_3.png" srcset="/img/loading.gif" lazyload alt="unsupervised_learning_3"></p>
+<h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/unsupervised_learning_4.png" srcset="/img/loading.gif" lazyload alt="unsupervised_learning_4"></p>
+<h2 id="半监督学习-semi-supervised-learning"><a href="#半监督学习-semi-supervised-learning" class="headerlink" title="半监督学习 semi-supervised learning"></a>半监督学习 semi-supervised learning</h2><ul>
+<li><p>一部分数据有“标记”或者答案，另一部分数据没有</p>
+</li>
+<li><p>常见的场景：各种原因产生的标记缺失。</p>
+</li>
+<li><p>我们通常都先使用无监督学习手段对数据做处理，之后使用监督学习手段做模型的训练和预测。</p>
+</li>
+</ul>
+<h2 id="增强学习"><a href="#增强学习" class="headerlink" title="增强学习"></a>增强学习</h2><p>根据周围环境的情况，采取行动，根据采取行动的结果，学习行动方式。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/reinforcement_learning.png" srcset="/img/loading.gif" lazyload alt="reinforcement_learning"></p>
+<ul>
+<li>无人驾驶</li>
+<li>机器人</li>
+</ul>
+<p>在增强学习中，监督学习和半监督学习是基础。</p>
+<h1 id="机器学习的其他分类"><a href="#机器学习的其他分类" class="headerlink" title="机器学习的其他分类"></a>机器学习的其他分类</h1><h2 id="在线学习和批量学习（离线学习）"><a href="#在线学习和批量学习（离线学习）" class="headerlink" title="在线学习和批量学习（离线学习）"></a>在线学习和批量学习（离线学习）</h2><h3 id="批量学习-Batch-Learning-Offline-Learning"><a href="#批量学习-Batch-Learning-Offline-Learning" class="headerlink" title="批量学习 Batch Learning / Offline Learning"></a>批量学习 Batch Learning / Offline Learning</h3><p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/batch_learning.png" srcset="/img/loading.gif" lazyload alt="batch_learning"></p>
+<ul>
+<li><p>优点：简单</p>
+</li>
+<li><p>问题：要考虑如如何适应环境变化</p>
+<ul>
+<li>解决方案：定时重新批量学习</li>
+</ul>
+</li>
+<li><p>缺点：每次重新批量学习，运行量巨大。在某些环境变化非常快的情况下，甚至是不可能的。</p>
+</li>
+</ul>
+<h3 id="在线学习-Online-Learning"><a href="#在线学习-Online-Learning" class="headerlink" title="在线学习 Online Learning"></a>在线学习 Online Learning</h3><p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/online_learning.png" srcset="/img/loading.gif" lazyload alt="online_learning"></p>
+<ul>
+<li><p>优点：及时反映新的环境变化</p>
+</li>
+<li><p>问题：新的数据可能带来不好的变化，错误的数据可能带来错误的结果</p>
+<ul>
+<li>解决方案：需要加强对数据的监控</li>
+</ul>
+</li>
+<li><p>也适用于数据量巨大，完全无法批量学习的环境</p>
+</li>
+</ul>
+<h2 id="参数学习和非参数学习"><a href="#参数学习和非参数学习" class="headerlink" title="参数学习和非参数学习"></a>参数学习和非参数学习</h2><h3 id="参数学习-Parametric-Learning"><a href="#参数学习-Parametric-Learning" class="headerlink" title="参数学习 Parametric Learning"></a>参数学习 Parametric Learning</h3><p>如图所示，为房屋面积与价格的关系曲线。</p>
+<p><img src="https://source.letitout.cloud/images/articles/2020/09/MachineLearning/basics/parametric_learning.png" srcset="/img/loading.gif" lazyload alt="parametric_learning"></p>
+<p>特点：一旦学习到了参数，就不需要原有的数据集。</p>
+<h3 id="非参数学习-Nonparametric-Learning"><a href="#非参数学习-Nonparametric-Learning" class="headerlink" title="非参数学习 Nonparametric Learning"></a>非参数学习 Nonparametric Learning</h3><ul>
+<li><p>不对模型进行过多假设</p>
+</li>
+<li><p>非参数不等于没有参数，而是对整个不进行建模，不学习一些参数</p>
+</li>
+</ul>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
                 
               </div>
               
@@ -257,12 +415,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/posts/ae6d8d24/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">NumPy</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/28db4216/">
-                        <span class="hidden-mobile">线性回归算法</span>
+                      <a href="/posts/712433a6/">
+                        <span class="hidden-mobile">React Hooks</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -18,7 +18,7 @@
   <meta name="author" content="Emery Wan">
   <meta name="keywords" content="">
   
-  <title>Hello World - 一层</title>
+  <title>Spring Cloud Hystrix 服务容错 - 一层</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -164,7 +164,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Spring Cloud Hystrix 服务容错">
               
             </span>
 
@@ -174,8 +174,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-06 19:20" pubdate>
-        2021年4月6日 晚上
+      <time datetime="2020-07-29 02:02" pubdate>
+        2020年7月29日 凌晨
       </time>
     </span>
   
@@ -186,7 +186,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      18 字
+      664 字
     </span>
   
 
@@ -196,7 +196,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      8
        分钟
     </span>
   
@@ -226,23 +226,61 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Spring Cloud Hystrix 服务容错</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年4月6日 晚上
+                  本文最后更新于：2020年7月29日 凌晨
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>最近博客重整中。</p>
-<p>文章会慢慢整理放上来。</p>
+              <h1 id="Spring-Cloud-Hystrix"><a href="#Spring-Cloud-Hystrix" class="headerlink" title="Spring Cloud Hystrix"></a>Spring Cloud Hystrix</h1><p>在微服务架构中，我们将系统拆分成了一个个的服务单元，各单元应用间通过服务注册与订阅的方式互相依赖。由于每个单元都在不同的进程中运行，如果某个服务不可用，可能导致级联故障，造成整个系统不可用的情况（雪崩效应）。为了解决这样的问题，产生了断路器等一系列的服务保护机制。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Spring Cloud Hystrix，它是一个基于 Netflix 的开源框架，具有如下功能：</p>
+<ul>
+<li>服务降级</li>
+<li>依赖隔离</li>
+<li>服务熔断</li>
+<li>监控（Hystrix Dashboard）</li>
+</ul>
+<h1 id="实现一个-Hystrix-Server"><a href="#实现一个-Hystrix-Server" class="headerlink" title="实现一个 Hystrix Server"></a>实现一个 Hystrix Server</h1><h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-hystrix<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
+<h2 id="添加注解"><a href="#添加注解" class="headerlink" title="添加注解"></a>添加注解</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@EnableCircuitBreaker</span><br><span class="hljs-meta">@EnableDiscoveryClient</span><br><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HystrixApplication</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        SpringApplication.run(HystrixApplication.class, args);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight yml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-attr">application:</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">hystrix-server</span><br><br><span class="hljs-attr">server:</span><br>  <span class="hljs-attr">port:</span> <span class="hljs-number">8080</span><br><br><span class="hljs-attr">eureka:</span><br>  <span class="hljs-attr">client:</span><br>    <span class="hljs-attr">serviceUrl:</span><br>      <span class="hljs-attr">defaultZone:</span> <span class="hljs-string">http://localhost:8761/eureka/</span><br></code></pre></div></td></tr></table></figure>
+
+<h1 id="Hystrix-应用"><a href="#Hystrix-应用" class="headerlink" title="Hystrix 应用"></a>Hystrix 应用</h1><h2 id="服务降级"><a href="#服务降级" class="headerlink" title="服务降级"></a>服务降级</h2><p>假设现在有一个接口 <code>/user/&#123;id&#125;</code> 获取用户信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> ResultVo&lt;UserInfo&gt; <span class="hljs-title">getUserInfo</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> String id)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> userService.getUserInfo(id);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>在 UserService 中添加调用方法的服务降级。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@HystrixCommand(fallbackMethod = &quot;userFallback&quot;)</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> ResultVo&lt;UserInfo&gt; <span class="hljs-title">getUserInfo</span><span class="hljs-params">(String id)</span> </span>&#123;<br>    <span class="hljs-comment">// 正常的服务调用和业务  此处以 restTemplate 为例</span><br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">return</span> restTemplate.getForObject(url + <span class="hljs-string">&quot;/user/&#123;1&#125;&quot;</span>, ResultVo.class, id);<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">public</span> ResultVo&lt;UserInfo&gt; <span class="hljs-title">userFallback</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-comment">// 处理服务降级需要返回的内容</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="服务降级-OpenFiegn"><a href="#服务降级-OpenFiegn" class="headerlink" title="服务降级 OpenFiegn"></a>服务降级 OpenFiegn</h2><h3 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight yml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">feign:</span><br>  <span class="hljs-attr">hystrix:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br></code></pre></div></td></tr></table></figure>
+
+<h3 id="OpenFeign-Client-端实现"><a href="#OpenFeign-Client-端实现" class="headerlink" title="OpenFeign Client 端实现"></a>OpenFeign Client 端实现</h3><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@FeignClient(</span><br><span class="hljs-meta">    name = &quot;user&quot;,  // 远程服务名</span><br><span class="hljs-meta">    fallback = UserClientFallback.class  // 指定 当服务降级时，采用的方法</span><br><span class="hljs-meta">)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserClient</span> </span>&#123;<br><br>    <span class="hljs-meta">@GetMapping(&quot;/user/&#123;id&#125;&quot;)</span><br>    <span class="hljs-function">ResultVo&lt;UserInfo&gt; <span class="hljs-title">getUserInfo</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> String id)</span></span>;<br><br>&#125;<br><br>---<br><br><span class="hljs-comment">// 实现 UserClient 接口</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserClientFallback</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserClient</span> </span>&#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function">ResultVo&lt;UserInfo&gt; <span class="hljs-title">getUserInfo</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> String id)</span> </span>&#123;<br>        <span class="hljs-comment">// ...</span><br>        <span class="hljs-comment">// 实现降级内容</span><br>    &#125;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="依赖隔离"><a href="#依赖隔离" class="headerlink" title="依赖隔离"></a>依赖隔离</h2><p>SpringCloud Hystrix 的 依赖隔离 类似于docker的“舱壁模式”。<br>docker通过”舱壁模式”实现进程隔离，使得容器之间互不影响。<br>而Hystrix使用该模式实现：“线程池隔离”，会为每一个HystrixCommand创建一个独立线程池，这样就算某个在Hystrix包装下的依赖服务出现延迟过高情况，也只是对该依赖服务的调用产生影响，并不会拖慢其他服务。</p>
+<p>使用 @HystrixCommand 来将某个函数包装成了 Hystrix 命令时，Hystrix框架自动地为这个函数实现了依赖隔离。所以依赖隔离，服务降级在使用时候都是一体化实现的，这样就可以实现服务容错保护。在编程模型上就会非常方便。</p>
+<h2 id="服务熔断"><a href="#服务熔断" class="headerlink" title="服务熔断"></a>服务熔断</h2>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Spring-Cloud/">Spring Cloud</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Spring-Cloud/">Spring Cloud</a>
+                    
+                  </div>
                 
               </div>
               
@@ -257,12 +295,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/posts/74b8cfc8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JVM 内存区域</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/28db4216/">
-                        <span class="hidden-mobile">线性回归算法</span>
+                      <a href="/posts/b51855cc/">
+                        <span class="hidden-mobile">Spring Cloud Zuul 服务网关</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

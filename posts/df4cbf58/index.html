@@ -18,7 +18,7 @@
   <meta name="author" content="Emery Wan">
   <meta name="keywords" content="">
   
-  <title>Hello World - 一层</title>
+  <title>Spring Cloud 服务通信 - 一层</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -164,7 +164,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Spring Cloud 服务通信">
               
             </span>
 
@@ -174,8 +174,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-06 19:20" pubdate>
-        2021年4月6日 晚上
+      <time datetime="2020-07-26 02:02" pubdate>
+        2020年7月26日 凌晨
       </time>
     </span>
   
@@ -186,7 +186,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      18 字
+      472 字
     </span>
   
 
@@ -196,7 +196,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      7
        分钟
     </span>
   
@@ -226,23 +226,70 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Spring Cloud 服务通信</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年4月6日 晚上
+                  本文最后更新于：2020年7月26日 凌晨
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>最近博客重整中。</p>
-<p>文章会慢慢整理放上来。</p>
+              <h1 id="Spring-Cloud-服务通信"><a href="#Spring-Cloud-服务通信" class="headerlink" title="Spring Cloud 服务通信"></a>Spring Cloud 服务通信</h1><ul>
+<li><p>同步通信：</p>
+<ul>
+<li>dobbo 通过 RPC 远程调用。</li>
+<li>spring cloud 通过 REST 接口调用。</li>
+</ul>
+</li>
+<li><p>异步通信：</p>
+<ul>
+<li>通过消息对列，如：RabbitMQ，Kafka，ActiveM 等。</li>
+</ul>
+</li>
+</ul>
+<p>本文主要介绍 Spring Cloud 使用 RestTemplate / OpenFeign 进行 REST 接口调用。</p>
+<h1 id="RestTemplate"><a href="#RestTemplate" class="headerlink" title="RestTemplate"></a>RestTemplate</h1><h2 id="通过-RestTemplate-进行调用"><a href="#通过-RestTemplate-进行调用" class="headerlink" title="通过 RestTemplate 进行调用"></a>通过 RestTemplate 进行调用</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> ProductInfo <span class="hljs-title">getProductMsg</span><span class="hljs-params">(String id)</span> </span>&#123;<br>    RestTemplate restTemplate = <span class="hljs-keyword">new</span> RestTemplate();<br>    ProductInfo response = restTemplate.getForObject(<br>        <span class="hljs-string">&quot;http://example.com/product/info&quot;</span>,    <span class="hljs-comment">// 远程调用地址</span><br>        ProductInfo.class,                    <span class="hljs-comment">// response 类型</span><br>        id                                    <span class="hljs-comment">// 需要传递的参数</span><br>    );<br>    <span class="hljs-keyword">return</span> response;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="利用-LoadBalancerClient-获取信息"><a href="#利用-LoadBalancerClient-获取信息" class="headerlink" title="利用 LoadBalancerClient 获取信息"></a>利用 LoadBalancerClient 获取信息</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Autowired</span><br><span class="hljs-keyword">private</span> LoadBalancerClient loadBalancerClient;<br><span class="hljs-function"><span class="hljs-keyword">public</span> ProductInfo <span class="hljs-title">getProductMsg</span><span class="hljs-params">(String id)</span> </span>&#123; <br>    RestTemplate restTemplate = <span class="hljs-keyword">new</span> RestTemplate();<br>    ServiceInstance serviceInstance = loadBalancerClient.choose(<span class="hljs-string">&quot;PRODUCT&quot;</span>);<br><br>    <span class="hljs-comment">// 利用 loadBalancerClient 通过应用名（spring.application.name）获取信息</span><br>    String url = String.format(<span class="hljs-string">&quot;http://%s:%s&quot;</span>, serviceInstance.getHost(), serviceInstance.getPort()) + <span class="hljs-string">&quot;/product/info&quot;</span>;<br><br>    ProductInfo response = restTemplate.getForObject(url, ProductInfo.class, id);<br>    <span class="hljs-keyword">return</span> response;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+<h2 id="利用-LoadBalance-在-RestTemplate-中直接使用应用名称"><a href="#利用-LoadBalance-在-RestTemplate-中直接使用应用名称" class="headerlink" title="利用 LoadBalance 在 RestTemplate 中直接使用应用名称"></a>利用 LoadBalance 在 RestTemplate 中直接使用应用名称</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RestTemplateConfig</span> </span>&#123;<br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-meta">@LoadBalance</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title">restTemplate</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RestTemplate();<br>    &#125;<br>&#125;<br><br>---<br><br><span class="hljs-meta">@Autowired</span><br><span class="hljs-keyword">private</span> RestTemplate restTemplate;<br><span class="hljs-function"><span class="hljs-keyword">public</span> ProductInfo <span class="hljs-title">getProductMsg</span><span class="hljs-params">(String id)</span> </span>&#123;<br>    <span class="hljs-comment">// 利用 @LoadBalance 可以在 RestTemplate 中使用应用名称</span><br>    ProductInfo response = restTemplate.getForObject(<span class="hljs-string">&quot;http://PRODUCT/product/msg&quot;</span>, ProductInfo.class, id);<br>    <span class="hljs-keyword">return</span> response;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h1 id="OpenFeign-（推荐）"><a href="#OpenFeign-（推荐）" class="headerlink" title="OpenFeign （推荐）"></a>OpenFeign （推荐）</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="添加启动注解"><a href="#添加启动注解" class="headerlink" title="添加启动注解"></a>添加启动注解</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.springframework.cloud.openfeign.EnableFeignClients;<br><br><span class="hljs-meta">@EnableFeignClients</span><br><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-meta">@EnableDiscoveryClient</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FeignApplication</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        SpringApplication.run(FeignApplication.class, args);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>现在有两个服务，分别为 Prodcut 和 Order 。<br>需求： Order 服务中，客户进行了下单操作后，调用 Product（Feign） 的进行减库存操作。</p>
+<ul>
+<li>Product 服务中，定义远程调用端。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DecreaseStockInput</span> </span>&#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br><br>---<br><br><span class="hljs-meta">@FeignClient(name = &quot;product&quot;)</span>  <span class="hljs-comment">// name: 远程服务名(Spring.application.name)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ProductClient</span> </span>&#123;<br><br>    <span class="hljs-meta">@RequestMapping(value = &quot;/product/decrease_stock&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">decreaseStock</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> List&lt;DecreaseStockInput&gt; decreaseStockInputList)</span></span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>Order 服务中，对 Product Client 进行调用。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OrderService</span> </span>&#123;<br>    <span class="hljs-comment">// 注入的为 Product 中的 ProductClient</span><br>    <span class="hljs-comment">// 通过依赖的方式</span><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> ProductClient productClient;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> OrderDTO <span class="hljs-title">create</span><span class="hljs-params">(OrderDTO orderDTO)</span> </span>&#123;<br>        <span class="hljs-comment">// ...</span><br>        <span class="hljs-comment">// 调用 Product 服务中的 api 进行减库存操作</span><br>        productClient.decreaseStock(decreaseStockInputList);<br>        <span class="hljs-comment">// ...</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Spring-Cloud/">Spring Cloud</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Spring-Cloud/">Spring Cloud</a>
+                    
+                  </div>
                 
               </div>
               
@@ -257,12 +304,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/posts/505de307/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Spring Cloud Config 统一配置中心</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/28db4216/">
-                        <span class="hidden-mobile">线性回归算法</span>
+                      <a href="/posts/d0c4b192/">
+                        <span class="hidden-mobile">Spring Cloud Eureka 服务注册与发现</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

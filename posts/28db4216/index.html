@@ -18,9 +18,25 @@
   <meta name="author" content="Emery Wan">
   <meta name="keywords" content="">
   
-  <title>归档 - 一层</title>
+  <title>线性回归算法 - 一层</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/stackoverflow-light.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -49,7 +65,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -148,9 +164,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="线性回归算法">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-18 01:01" pubdate>
+        2020年9月18日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      445 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -163,100 +216,189 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 15 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/posts/28db4216/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">线性回归算法</span>
-      <time style="float: right;">09-20</time>
-    </a>
-  
-    
-    <a href="/posts/538d56f6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">梯度下降法</span>
-      <time style="float: right;">09-19</time>
-    </a>
-  
-    
-    <a href="/posts/28db4216/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">线性回归算法</span>
-      <time style="float: right;">09-18</time>
-    </a>
-  
-    
-    <a href="/posts/ec424a85/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">kNN - k近邻算法</span>
-      <time style="float: right;">09-17</time>
-    </a>
-  
-    
-    <a href="/posts/ae6d8d24/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">NumPy</span>
-      <time style="float: right;">09-17</time>
-    </a>
-  
-    
-    <a href="/posts/4aa284f3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">机器学习基础</span>
-      <time style="float: right;">09-16</time>
-    </a>
-  
-    
-    <a href="/posts/712433a6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">React Hooks</span>
-      <time style="float: right;">09-01</time>
-    </a>
-  
-    
-    <a href="/posts/74b8cfc8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">JVM 内存区域</span>
-      <time style="float: right;">08-01</time>
-    </a>
-  
-    
-    <a href="/posts/1f248637/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Spring Cloud Hystrix 服务容错</span>
-      <time style="float: right;">07-29</time>
-    </a>
-  
-    
-    <a href="/posts/b51855cc/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Spring Cloud Zuul 服务网关</span>
-      <time style="float: right;">07-28</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">线性回归算法</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年9月18日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="LinearRegression"><a href="#LinearRegression" class="headerlink" title="LinearRegression"></a>LinearRegression</h1><ul>
+<li>解决回归问题</li>
+<li>思想简单，实现容易</li>
+<li>许多强大的非线性模型的基础</li>
+<li>结果具有很好的解释性</li>
+<li>蕴含机器学习中的很多重要的思想</li>
+</ul>
+<h1 id="简单线性回归"><a href="#简单线性回归" class="headerlink" title="简单线性回归"></a>简单线性回归</h1><p>如图所示，在坐标中，每一个点都表示一个数据。</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>横轴：房屋面积</li>
+<li>纵轴：房屋价格</li>
+</ul>
+<p>每个点表示房屋面积所对应的价格。</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>线性回归算法认为 房屋面积 与 价格 具备线性关系。可以寻找到一条直线，最大程度“拟合”样本特征和样本输出标记之间的关系。</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>简单线性回归问题每个样本只有横轴一个特征（房屋面积），输出标记为纵轴（价格）。<br>如果需要研究两个样本特征，需要在三维的空间中研究。</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>在这里，我们假设找到了最佳拟合直线方程</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>则对于每一个样本点 </p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>根据我们的直线方程，预测值为：</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>真值为：</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>我们希望的是 </p>
+<p><img src="" srcset="/img/loading.gif" lazyload> </p>
+<p>之间的差距尽量小</p>
+<p>为表达差距，我们使用如下方程表示</p>
+<p><img src="" srcset="/img/loading.gif" lazyload></p>
+<p>通过平方之后，不仅消除了正负，而且函数处处可导。</p>
+<h1 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h1><h2 id="利用-scikit-learn-实现"><a href="#利用-scikit-learn-实现" class="headerlink" title="利用 scikit-learn 实现"></a>利用 scikit-learn 实现</h2><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn.linear_model <span class="hljs-keyword">import</span> LinearRegression<br><span class="hljs-keyword">from</span> sklearn <span class="hljs-keyword">import</span> datasets<br><span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split<br><br>lin_reg = LinearRegression()<br>lin_reg.fit(X_train, y_train)<br></code></pre></div></td></tr></table></figure>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-
-              </div>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>线性回归是典型的参数学习</p>
+<ul>
+<li>对比 kNN：非参数学习</li>
+</ul>
+</li>
+<li><p>只能解决回归问题</p>
+<ul>
+<li>但是在很多分类方法中，线性回归是基础（如逻辑回归）</li>
+<li>对比 kNN：即可解决分类问题，也可解决回归问题</li>
+</ul>
+</li>
+<li><p>对数据有假设：线性</p>
+<ul>
+<li>对比 kNN：对数据没有假设</li>
+</ul>
+</li>
+<li><p>优点：对数据具有强解释性</p>
+</li>
+</ul>
+<h2 id="线性回归-可解释性说明"><a href="#线性回归-可解释性说明" class="headerlink" title="线性回归 可解释性说明"></a>线性回归 可解释性说明</h2>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/538d56f6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">梯度下降法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/ec424a85/">
+                        <span class="hidden-mobile">kNN - k近邻算法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.lazyComments('valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "7KGKpeEgBF3wMkny2GlApl5L-gzGzoHsz",
+          app_key: "XocemQTO4k9zEzAk4J64ffLA",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -347,9 +489,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
