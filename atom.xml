@@ -6,7 +6,7 @@
   <link href="https://blog.letitout.cloud/atom.xml" rel="self"/>
   
   <link href="https://blog.letitout.cloud/"/>
-  <updated>2021-04-06T11:20:01.000Z</updated>
+  <updated>2021-04-25T10:30:00.345Z</updated>
   <id>https://blog.letitout.cloud/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyTorch 火速上手</title>
+    <link href="https://blog.letitout.cloud/posts/198834cd/"/>
+    <id>https://blog.letitout.cloud/posts/198834cd/</id>
+    <published>2021-04-18T06:59:00.000Z</published>
+    <updated>2021-04-25T10:30:00.345Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;PyTorch-是什么？&quot;&gt;&lt;a href=&quot;#PyTorch-是什么？&quot; class=&quot;headerlink&quot; title=&quot;PyTorch 是什么？&quot;&gt;&lt;/a&gt;PyTorch 是什么？&lt;/h2&gt;&lt;p&gt;基于 Python</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://blog.letitout.cloud/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://blog.letitout.cloud/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="PyTorch" scheme="https://blog.letitout.cloud/tags/PyTorch/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
